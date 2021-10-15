@@ -16,7 +16,9 @@ import AuthContextProvider from "./Context.ts/AuthContext";
 
 import "./index.css";
 
-const queryClient = new QueryClient({});
+const queryClient = new QueryClient({
+  defaultOptions: { queries: { refetchOnWindowFocus: false } },
+});
 
 Modal.setAppElement("#root");
 

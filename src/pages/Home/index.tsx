@@ -12,7 +12,7 @@ const Home = () => {
   const searchQuery = new URLSearchParams(location.search).get("search") || "";
 
   const [searchForm, setSearchForm] = useState("");
-  const { data } = useGetContats({}, searchQuery);
+  const { data, isLoading } = useGetContats({}, searchQuery);
 
   const history = useHistory();
 
@@ -46,7 +46,7 @@ const Home = () => {
         <PrimaryButton>Search</PrimaryButton>
       </form>
 
-      <ContactList contacts={data || []} />
+      <ContactList isLoading={isLoading} contacts={data || []} />
     </div>
   );
 };

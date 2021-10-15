@@ -1,5 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from "react";
-import Modal from "react-modal";
+import Modal from "../Modal";
 import { useQueryClient } from "react-query";
 import { useAddContact } from "../../utils/hooks/contact";
 import { showSuccessToast } from "../../utils/toast";
@@ -16,8 +16,8 @@ const AddContactModal: React.FC<Props> = ({ isOpen, closeModal }) => {
   const queryClient = useQueryClient();
 
   const [dials, setDials] = useState([
-    { kind: "home", dial: "" },
     { kind: "mobile", dial: "" },
+    { kind: "home", dial: "" },
   ]);
 
   const addContactMutation = useAddContact({
@@ -77,24 +77,11 @@ const AddContactModal: React.FC<Props> = ({ isOpen, closeModal }) => {
   };
   return (
     <Modal
-      shouldCloseOnEsc={true}
-      shouldCloseOnOverlayClick={true}
-      onRequestClose={closeModal}
+      closeModal={closeModal}
       isOpen={isOpen}
-      style={{
-        content: {
-          maxWidth: "40rem",
-          minWidth: "20rem",
-          margin: "auto",
-          background: "#182238",
-          height: "max-content",
-          borderRadius: "14px",
-        },
-        overlay: { background: "rgba(0,0,0,.3)" },
-      }}
-      contentLabel="Add mew contact"
+      contentLabel="Add new contact"
+      title="Add new contact"
     >
-      <h1 className="mb-4 text-lg font-semibold text-white">Add new contact</h1>
       <form onSubmit={handleSubmit}>
         <FormGroup
           label="Name"
@@ -129,7 +116,7 @@ const AddContactModal: React.FC<Props> = ({ isOpen, closeModal }) => {
               className="mb-4"
               value={obj.dial}
               onChange={handleDialChange}
-              required={obj.kind === "home"}
+              required={obj.kind === "mobile"}
             />
           ))}
         </div>

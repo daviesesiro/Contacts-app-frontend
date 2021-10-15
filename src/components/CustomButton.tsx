@@ -11,9 +11,9 @@ export const PrimaryButton: React.FC<{ className?: string }> = ({
   </button>
 );
 
-export const RounedButton: React.FC<{
-  className: string;
-  onClick: () => void;
+export const RoundedButton: React.FC<{
+  className?: string;
+  onClick?: () => void;
 }> = ({ children, className, ...otherProps }) => (
   <button
     className={`hover:bg-gray-600 bg-gray-700 text-lg transistion duration-100 w-10 h-10 items-center flex justify-center rounded-full ${className}`}

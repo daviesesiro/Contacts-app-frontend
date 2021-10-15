@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, Route } from "react-router-dom";
 import { useAuthContext } from "../Context.ts/AuthContext";
 import AddContactModal from "./Contact/AddContactModal";
-import { RounedButton } from "./CustomButton";
+import { RoundedButton } from "./CustomButton";
 
 const Index: React.FC<{}> = () => {
   const { logout } = useAuthContext();
@@ -24,9 +24,9 @@ const Index: React.FC<{}> = () => {
           </h1>
           <div className="flex">
             <Route exact path="/">
-              <RounedButton onClick={openModal} className="">
+              <RoundedButton onClick={openModal} className="">
                 +
-              </RounedButton>
+              </RoundedButton>
               <button
                 onClick={() => logout!()}
                 className="hover:text-gray-300 ml-4 text-base"
