@@ -46,7 +46,7 @@ const DetailItem: React.FC<{ label: string; value: string }> = ({
 }) => (
   <div className=" py-2">
     <p className="text-lg font-semibold text-gray-300 capitalize">{label}</p>
-    <p className="text-xl text-white">{value}</p>
+    <p className="text-xl text-white">{value === "" ? "Not added" : value}</p>
   </div>
 );
 
