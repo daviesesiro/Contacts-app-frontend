@@ -4,7 +4,7 @@ import { FormGroup } from "../../components/Form";
 import { PrimaryButton } from "../../components/CustomButton";
 import { useLogin } from "../../utils/hooks/auth";
 import { useAuthContext } from "../../Context.ts/AuthContext";
-import { showSuccessToast } from "../../utils/toast";
+import { showErrorToast, showSuccessToast } from "../../utils/toast";
 
 const Login = () => {
   let history = useHistory();
@@ -18,6 +18,9 @@ const Login = () => {
       setAuth!({ user, token });
       showSuccessToast("Login Successful");
       history.push("/");
+    },
+    onError: (err: any) => {
+      showErrorToast(err.response.data.data);
     },
   });
 
