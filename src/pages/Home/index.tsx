@@ -43,7 +43,7 @@ const Home = () => {
           value={searchForm}
           placeholder="Search Contacts"
         />
-        <PrimaryButton>Search</PrimaryButton>
+        <PrimaryButton isLoading={isLoading}>Search</PrimaryButton>
       </form>
 
       <ContactList isLoading={isLoading} contacts={data || []} />

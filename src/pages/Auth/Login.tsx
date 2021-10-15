@@ -69,7 +69,12 @@ const Login = () => {
             required
           />
 
-          <PrimaryButton className="w-full mt-5">Login</PrimaryButton>
+          <PrimaryButton
+            isLoading={loginMutation.isLoading}
+            className="w-full mt-5"
+          >
+            Login
+          </PrimaryButton>
           <p className="text-semibold mt-4 text-sm text-gray-400">
             Not register yet?
             <Link className="hover:text-gray-200 text-white" to="/register">

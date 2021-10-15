@@ -105,7 +105,12 @@ const Register = () => {
             required
           />
 
-          <PrimaryButton className="w-full mt-5">Register</PrimaryButton>
+          <PrimaryButton
+            isLoading={registerMutation.isLoading}
+            className="w-full mt-5"
+          >
+            Register
+          </PrimaryButton>
           <p className="text-semibold mt-4 text-sm text-gray-400">
             Already have an account?
             <Link className="hover:text-gray-200 text-white" to="/login">

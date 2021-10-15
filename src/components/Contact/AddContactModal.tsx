@@ -121,7 +121,9 @@ const AddContactModal: React.FC<Props> = ({ isOpen, closeModal }) => {
           ))}
         </div>
 
-        <PrimaryButton>Add new contact</PrimaryButton>
+        <PrimaryButton isLoading={addContactMutation.isLoading}>
+          Add new contact
+        </PrimaryButton>
       </form>
     </Modal>
   );
