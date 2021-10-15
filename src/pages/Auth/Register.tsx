@@ -60,7 +60,7 @@ const Register = () => {
         </div>
         {/* Form */}
         <form onSubmit={handleSubmit}>
-          <div className="flex justify-between">
+          <div className="flex justify-between space-x-4">
             <FormGroup
               onChange={handleInputChange}
               required
