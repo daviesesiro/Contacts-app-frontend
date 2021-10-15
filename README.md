@@ -1,1 +1,1 @@
-# Contacts App Client
+# Contacts App frontend
