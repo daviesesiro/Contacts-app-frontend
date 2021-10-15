@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
-import { Link, useHistory, useLocation } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { FormGroup } from "../../components/Form";
-import { CustomButton } from "../../components/CustomButton";
+import { PrimaryButton } from "../../components/CustomButton";
 import { useLogin } from "../../utils/hooks/auth";
 import { useAuthContext } from "../../Context.ts/AuthContext";
 import { showSuccessToast } from "../../utils/toast";
@@ -69,7 +69,7 @@ const Login = () => {
             required
           />
 
-          <CustomButton className="w-full mt-5">Login</CustomButton>
+          <PrimaryButton className="w-full mt-5">Login</PrimaryButton>
           <p className="text-semibold mt-4 text-sm text-gray-400">
             Not register yet?
             <Link className="hover:text-gray-200 text-white" to="/register">

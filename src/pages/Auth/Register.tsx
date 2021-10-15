@@ -1,6 +1,6 @@
 import { FormEvent, ChangeEvent, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { CustomButton } from "../../components/CustomButton";
+import { PrimaryButton } from "../../components/CustomButton";
 import { FormGroup } from "../../components/Form";
 import { useAuthContext } from "../../Context.ts/AuthContext";
 import { useRegister } from "../../utils/hooks/auth";
@@ -105,7 +105,7 @@ const Register = () => {
             required
           />
 
-          <CustomButton className="w-full mt-5">Register</CustomButton>
+          <PrimaryButton className="w-full mt-5">Register</PrimaryButton>
           <p className="text-semibold mt-4 text-sm text-gray-400">
             Already have an account?
             <Link className="hover:text-gray-200 text-white" to="/login">

@@ -1,19 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
+
+// REACT QUERY IMPORTS
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
-// TOAST WRAPPER
+import Modal from "react-modal";
+
+// TOAST IMPORTS
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import App from "./App";
-
-import "./index.css";
 import AuthContextProvider from "./Context.ts/AuthContext";
 
-// Create a client
+import "./index.css";
+
 const queryClient = new QueryClient({});
+
+Modal.setAppElement("#root");
 
 ReactDOM.render(
   <React.StrictMode>
